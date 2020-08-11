@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Build Docker Image') {
             steps {
-                sh "sudo docker build -t 59351436/calculator:v1.0.0 ."
+		withCredentials([string(credentialsId: 'root', variable: 'rootpwd')]) {
+                sh "echo ${rootpwd} | sudo -S docker build -t 59351436/calculator:v1.0.0 ."
+		}
             }
         }
         

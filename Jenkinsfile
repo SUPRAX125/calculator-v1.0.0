@@ -14,7 +14,7 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'docker-hub', variable: 'dockerHubPwd')]) {
               // some block
-              sh "sudo docker login -u 59351436 -p ${dockerHubPwd}"
+              sh "sudo docker login -u 59351436 -S -p ${dockerHubPwd}"
               sh "docker push 59351436/calculator:v1.0.0"
                }
             }

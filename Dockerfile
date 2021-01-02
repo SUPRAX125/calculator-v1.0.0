@@ -6,6 +6,6 @@ WORKDIR /app
 
 CMD npm install
 
-CMD npm start
+CMD npm build
 
 EXPOSE 3000
